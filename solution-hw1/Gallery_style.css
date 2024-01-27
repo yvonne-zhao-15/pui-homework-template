@@ -177,3 +177,9 @@ select{
     margin: 40px;
     color: black;
 }
+
+#shortline{
+    height: 3px;
+    background-color: black;
+    width: 900px;
+}
