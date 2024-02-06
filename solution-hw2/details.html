@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link rel="stylesheet" type="text/css" href="gallery_style.css">
+</head>
+
+<body>
+    <!--Header-->
+    <div class="header-container">
+      <a href="index.html">
+        <img src="../assets/logo/logo-01.svg" alt="This is an image" class="logo"> 
+      </a>
+      <!--Titles-->
+      <div class="smaller-container"> <!--make this a flexbox-->
+        <ul class="navigation">
+          <li class="h1"><a href="index.html" class="no-underline">PRODUCTS</a></li>
+          <li class="h2"><a href="cart.html" class="no-underline">CART<sup>2</sup></a> </li>
+        </ul>
+        <hr class="shortline">
+        <div class="h3">Our hand-made cinnamon rolls</div>
+      </div>
+    </div>
+
+
+    <div class="main-container">
+      <div class="roll-detail">
+        <img src="../assets/products/original-cinnamon-roll.jpg" alt="This is an image" class="detail-image">
+      </div>
+  
+      <div class="options"> <!--smaller container-->
+        <div class="description">Customize our delicious, hand-making cinnamons to your liking!</div>
+        <div>
+          <div class="description"> <div>Glazing:</div>
+            <select name="glazing" id="dropdown1">
+                <option>Keep original</option>
+                <option>Sugar milk</option>
+                <option>Vanilla milk</option>
+                <option>Double chocolate</option>
+            </select>
+          </div>
+          
+          <div class="description"><div>Pack size: </div>
+            <select name="pack-size" id="dropdown2">
+                <option>1</option>
+                <option>3</option>
+                <option>6</option>
+                <option>12</option>
+            </select>
+          </div>
+        </div>
+        <div class="detail-action">
+            <span class="detail-price"> $2.49  </span> 
+            <button id="cart-button"> Add to Cart</button>
+        </div>
+        
+  
+      </div>
+    </div>
+    
+
+
+    <div class="emptyspace"> <br> </div>
+
+</body>
+</html>

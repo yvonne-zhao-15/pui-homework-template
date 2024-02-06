@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" type="text/css" href="gallery_style.css">
+</head>
+
+<body>
+    <!--Header-->
+    <div class="header-container">
+      <a href="index.html">
+        <img src="../assets/logo/logo-01.svg" alt="This is an image" class="logo"> 
+      </a>
+      <!--Titles-->
+      <div class="smaller-container"> <!--make this a flexbox-->
+        <ul class="navigation">
+          <li class="h2"><a href="index.html" class="no-underline">PRODUCTS</a></li>
+          <li>
+            <span class="h1"><a href="cart.html" class="no-underline">CART</span><sup>2</sup></a> 
+          </li>
+        </ul>
+        <hr class="shortline">
+        <div class="h3">Our hand-made cinnamon rolls</div>
+      </div>
+    </div>
+
+    <!--Cart-->
+    <div class="product"> <!--make this a flex container-->
+      <img src="../assets/products/original-cinnamon-roll.jpg" alt="This is an image" class="cart-img">
+      <div>
+        <div class="text">Orginal Cinnamon Roll</div>
+        <div class="text">Glazing: Keep original</div>
+        <div class="text">Pack Size: 1</div>
+      </div>
+      <div class="cart-price">$ 2.49</div>
+      <div class="remove">Remove</div>
+    </div>
+
+    <div class="product">
+      <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="This is an image" class="cart-img">
+      <div>
+        <div class="text">Double Chocolate Cinnamon Roll</div>
+        <div class="text">Glazing: Sugar milk</div>
+        <div class="text">Pack Size: 6</div>
+      </div>
+      <div class="cart-price">$ 27.45</div>
+      <div class="remove">Remove</div>
+      <hr class="shortline">
+      <div id="empty-img"></div>
+      <div class="text"> Total </div>
+      <div class="cart-price"> $ 29.94</div>
+      <div id="all-row"><button id="checkout-button">Checkout</button></div>
+    </div>
+
+      
+
+    <div class="emptyspace"> <br> </div>
+
+</body>
+</html>

@@ -1,0 +1,296 @@
+body{
+    font-family: sans-serif;
+    font-size: 30px;
+    width: 1200px;
+}
+
+.no-underline{
+    text-decoration: none;
+    color: black;
+}
+
+.lefttext{
+    text-align: left;
+}
+
+.header-container{
+    width: 400px;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.smaller-container{
+    margin: 15px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 0px 5px;
+}
+
+.navigation{
+    display: flex;
+    justify-content: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 25px 40px 0px 0px;
+    text-decoration: none;
+    color: black;
+    align-items: last baseline;
+}
+
+.logo {
+    width: 400px;
+    height: auto;
+    text-align: left;
+}
+
+li{
+    display: inline;
+    margin: 0px 30px;
+}
+
+sup{
+    background-color: red;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 50%;
+    margin: 0px 10px;
+}
+
+hr{
+    height: 3px;
+    background-color: black;
+    border: 0px;
+}
+
+.h1{
+    font-weight: bold;
+    background-color: yellow;
+    color: black;
+}
+
+.h2{
+    text-align: center;
+    color: black;
+}
+
+.h3{
+    align-items: baseline;
+    padding: 40px 0px 0px 0px;
+}
+
+.all-rolls{
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 30px;
+    justify-content: center;
+    gap: 40px 25px;
+    align-items: first baseline;
+    padding: 10px 30px;
+}
+
+
+.rolls{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;  
+    flex-wrap: wrap;
+}
+
+.img{
+    padding: 10px;
+}
+
+.img:hover{
+    padding: 10px;
+    background-color: yellow;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.name{
+    align-self:flex-start; 
+    /* text-align: left; */
+    text-decoration: underline;
+    font-size: 22px;
+    margin: 15px 0px;
+    color: black;
+}
+
+.price{
+    align-self: flex-start;
+    font-size: 22px;
+    font-weight: normal;
+    color: black;
+}
+
+.galleryimg{
+    width: 285px;
+    height: 285px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+}
+
+
+/* Product Detail */
+
+.roll-detail{
+    text-align: center;
+}
+
+.main-container{
+    align-items: flex-start; 
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 1200px;
+    padding: 50px 60px;
+    justify-content: center;
+}
+
+.description{
+    margin: 25px 0px;
+    text-align: left;
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+.options{
+    width: 300px;
+    height: 605px;
+    padding: 0px 10px 0px 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+select{
+    font-size: 22px;
+    text-align: left;
+    padding: 5px 10px;
+    padding-left: 10px;
+    width: 140%;
+    height: 40px;
+    margin: 10px 0px;
+}
+
+.detail-image{
+    width: 600px;
+    height: 600px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+}
+
+.detail-action{
+    align-self: flex-end;
+}
+
+.detail-price{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#cart-button{
+    font-size: 20px;
+    font-weight: bold;
+    width: 170px;
+    height: 40px;
+    background-color: yellow;
+    margin-left: 20px;
+}
+
+
+/* Shopping Cart */
+.cart-img{
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+.product{
+    margin: 0px 0px 0px 400px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start; 
+    flex-wrap: wrap;
+
+}
+
+.cart-price{
+    text-align: right;
+    font-size: 22px;
+    align-self: center;
+    flex-grow: 1;
+    
+}
+
+.text{
+    margin: 20px;
+    text-align: left;
+    font-size: 22px;
+}
+
+.remove{
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 20px 0px;
+    width: 100%;
+    align-self: flex-start;
+    text-align: left;
+}
+
+#checkout-button{
+    font-size: 22px;
+    font-weight: bold;
+    width: 150px;
+    height: 75px;
+    background-color: yellow;
+    text-align: center;
+    justify-content: end;
+    flex-grow: 1;
+}
+
+.emptyspace{
+    margin: 300px;
+}
+
+#h2-cart{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    background-color: yellow;
+}
+
+#h1-cart{
+    margin: 40px;
+    color: black;
+}
+
+.shortline{
+    height: 4px;
+    background-color: black;
+    width: 900px;
+    margin: 0px;
+}
+
+#empty-img{
+    width: 200px;
+}
+
+#all-row{
+    width: 1000px;
+    text-align: right;
+}
+
