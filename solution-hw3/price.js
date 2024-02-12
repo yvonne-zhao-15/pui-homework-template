@@ -26,17 +26,17 @@ const selectGlazing = document.querySelector('#dropdown1');
 const selectPackSize = document.querySelector('#dropdown2');
 
 // populate options in dropdown menu
-for (const key in glazing){
+for (const p in glazing){
     var option = document.createElement('option');
-    option.text = key;
-    option.value = glazing.key;
+    option.text = p;
+    option.value = glazing[p];
     selectGlazing.add(option);
 };
 
-for (const key in packSize){
+for (const p in packSize){
     var option = document.createElement('option');
-    option.text = key;
-    option.value = packSize.key;
+    option.text = p;
+    option.value = packSize[p];
     selectPackSize.add(option);
 };
 
