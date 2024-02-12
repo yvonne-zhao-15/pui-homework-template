@@ -23,8 +23,8 @@ packSize_options.forEach((option, index) => {
 });
 
 // select the options that user chooses
-let selectGlazing = document.querySelector('#dropdown1');
-let selectPackSize = document.querySelector('#dropdown2');
+const selectGlazing = document.querySelector('#dropdown1');
+const selectPackSize = document.querySelector('#dropdown2');
 
 // compute and display the final price
 function displayPrice(roll){
@@ -34,14 +34,18 @@ function displayPrice(roll){
 
 // update roll.glazing
 function onSelectGlazingChange(){
-    glazingIndex = parseInt(selectGlazing.value);
+    const glazingIndex = parseInt(selectGlazing.value);
     roll.glazing = glazing[glazingIndex];
     displayPrice(roll);
 };
 
 // update roll.packSize
 function onSelectPackSizeChange(){
-    packSizeIndex = parseInt(selectPackSize.value);
+    const packSizeIndex = parseInt(selectPackSize.value);
     roll.packSize = packSize[packSizeIndex];
     displayPrice(roll);
 };
+
+// set onchange property 
+selectGlazing.onchange = onSelectGlazingChange;
+selectPackSize.onchange = onSelectPackSizeChange;
