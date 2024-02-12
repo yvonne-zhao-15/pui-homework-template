@@ -1,9 +1,5 @@
 
-// hardcode price adaptations for glazing and packSize options
-const glazing = [0, 0, 0.5, 1.5];
-const packSize = [1, 3, 5, 10];
-
-// set up the object roll with its properties
+// set up objects to store information
 const roll = {
     glazing: 0,
     packSize: 1,
@@ -11,20 +7,38 @@ const roll = {
     finalPrice: 2.49,
 };
 
-// add value attribute to options based on their index
-// editted from ChatGPT https://chat.openai.com/ 
-const glazing_options = document.querySelectorAll('#dropdown1 option');
-const packSize_options = document.querySelectorAll('#dropdown2 option');
-glazing_options.forEach((option, index) =>{
-    option.value = index;
-});
-packSize_options.forEach((option, index) => {
-    option.value = index;
-});
+const glazing = {
+    'Keep original': 0,
+    'Sugar milk': 0,
+    'Vanilla milk': 0.5,
+    'Double chocolate': 1.5,
+};
 
-// select the options that user chooses
+const packSize = {
+    '1': 1,
+    '3': 3,
+    '6': 6,
+    '12': 12,
+};
+
+// select the dropdown menu
 const selectGlazing = document.querySelector('#dropdown1');
 const selectPackSize = document.querySelector('#dropdown2');
+
+// populate options in dropdown menu
+for (const key in glazing){
+    var option = document.createElement('option');
+    option.text = key;
+    option.value = glazing.key;
+    selectGlazing.add(option);
+};
+
+for (const key in packSize){
+    var option = document.createElement('option');
+    option.text = key;
+    option.value = packSize.key;
+    selectPackSize.add(option);
+};
 
 // compute and display the final price
 function displayPrice(roll){
@@ -32,17 +46,17 @@ function displayPrice(roll){
     document.querySelector('.detail-price').innerText = '$' + roll.finalPrice;
 };
 
-// update roll.glazing
+// update roll.glazing when dropdown menu for glazing changes
 function onSelectGlazingChange(){
-    const glazingIndex = parseInt(selectGlazing.value);
-    roll.glazing = glazing[glazingIndex];
+    const selectedOption = selectGlazing.options[selectGlazing.selectedIndex];
+    roll.glazing = glazing[(selectedOption.text)];
     displayPrice(roll);
 };
 
-// update roll.packSize
+// update roll.packSize when dropdown menu for packSize changes
 function onSelectPackSizeChange(){
-    const packSizeIndex = parseInt(selectPackSize.value);
-    roll.packSize = packSize[packSizeIndex];
+    const selectedOption = selectPackSize.options[selectPackSize.selectedIndex];
+    roll.packSize = packSize[(selectedOption.text)];
     displayPrice(roll);
 };
 
