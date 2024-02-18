@@ -82,7 +82,8 @@ function displayPrice(currRoll){
     document.querySelector('.detail-price').innerText = '$' + currRoll.finalPrice;
 };
 
-// update currRoll.glazing and .glazingName when dropdown menu for glazing changes
+// update currRoll.glazing and .glazingName 
+// when dropdown menu for glazing changes
 function onSelectGlazingChange(){
     const selectedOption = selectGlazing.options[selectGlazing.selectedIndex];
     currRoll.glazingName = selectedOption.text;
