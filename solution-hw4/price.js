@@ -1,8 +1,10 @@
 
-// from hw4 writeup
+// from hw4 writeup - start
+// parse url parameters
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const rollType = params.get('roll');
+// RollClass
 class RollClass {
     constructor(rollType, rollGlazing, packSize, basePrice) {
         this.type = rollType;
@@ -11,21 +13,23 @@ class RollClass {
         this.basePrice = basePrice;
     }
 };
+// from hw4 writeup - end
 
-let testing = 0;
-
-// extract name, price, image path
+// extract name, price, image path from url
 const rollName = rolls[rollType];
 const rollPrice = rollName.basePrice;
 const rollImgPath = rollName.imageFile;
 
 // set up objects to store information
-let roll = {
-    glazing: 0,
+
+// initialized to default values, store current roll info
+// properties are updated when user select an option in dropdown menu
+let currRoll = {
+    glazingName: 'Keep original',
+    glazing: 0, 
     packSize: 1,
     basePrice: rollPrice,
-    finalPrice: 2.49,
-    glazingName: 'Keep original',
+    finalPrice: rollPrice,
 };
 
 const glazing = {
@@ -53,7 +57,6 @@ for (const p in glazing){
     option.value = glazing[p];
     selectGlazing.add(option);
 };
-
 for (const p in packSize){
     var option = document.createElement('option');
     option.text = p;
@@ -61,64 +64,53 @@ for (const p in packSize){
     selectPackSize.add(option);
 };
 
-
-//////////////////////////////////////////////////////////////////
+////////////////////////////
 // hw4
 const cart = [];
 
-// update DOM elements
+// update heading and img src based on url
 const heading = document.getElementById('url-type');
 heading.innerText = rollType + ' Cinnamon Roll';
-
 const image = document.getElementById('detail-image');
 image.src = "../assets/products/" + rollImgPath;
-//////////////////////////////////////////////////////////////////
-
+////////////////////////////
 
 // compute and display the final price
 // update: use rollPrice as baseprice
-function displayPrice(roll){
-    roll.finalPrice = ((rollPrice + roll.glazing) * roll.packSize).toFixed(2);
-    document.querySelector('.detail-price').innerText = '$' + roll.finalPrice;
+function displayPrice(currRoll){
+    currRoll.finalPrice = ((currRoll.basePrice + currRoll.glazing) * currRoll.packSize).toFixed(2);
+    document.querySelector('.detail-price').innerText = '$' + currRoll.finalPrice;
 };
 
-// update roll.glazing when dropdown menu for glazing changes
+// update currRoll.glazing and .glazingName when dropdown menu for glazing changes
 function onSelectGlazingChange(){
     const selectedOption = selectGlazing.options[selectGlazing.selectedIndex];
-    roll.glazingName = selectedOption.text;
-    roll.glazing = glazing[(selectedOption.text)];
-    console.log(roll.glazing);
-    displayPrice(roll);
+    currRoll.glazingName = selectedOption.text;
+    currRoll.glazing = glazing[currRoll.glazingName];
+    displayPrice(currRoll);
 };
 
-// update roll.packSize when dropdown menu for packSize changes
+// update currRoll.packSize when dropdown menu for packSize changes
 function onSelectPackSizeChange(){
     const selectedOption = selectPackSize.options[selectPackSize.selectedIndex];
-    roll.packSize = packSize[(selectedOption.text)];
-    displayPrice(roll);
+    currRoll.packSize = packSize[(selectedOption.text)];
+    displayPrice(currRoll);
 };
 
-//////////////////////////////////////////////////////////////////
-// When users click "add to cart", store information
-
+// When users click "add to cart", store curr roll information
 function onAddToCartClick(){
-    let someRoll = new RollClass(rollType, roll.glazingName, roll.packSize, rollPrice);
-    console.log('sssss');
-    console.log(someRoll);
+    let someRoll = new RollClass(rollType, currRoll.glazingName, currRoll.packSize, rollPrice);
     cart.push(someRoll);
-    console.log('sssss');
     console.log(cart);
 };
 
-displayPrice(roll);
-
-// set onchange property 
+// set onchange property for 2 dropdown menu and 'add to cart' button
 selectGlazing.onchange = onSelectGlazingChange;
 selectPackSize.onchange = onSelectPackSizeChange;
-
 cartButton = document.querySelector('#cart-button');
-console.log(cartButton);
 cartButton.onclick = onAddToCartClick;
 
+// display initial price
+displayPrice(currRoll);
 
 
