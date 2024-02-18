@@ -10,7 +10,9 @@ class RollClass {
         this.size = packSize;
         this.basePrice = basePrice;
     }
-}
+};
+
+let testing = 0;
 
 // extract name, price, image path
 const rollName = rolls[rollType];
@@ -18,11 +20,12 @@ const rollPrice = rollName.basePrice;
 const rollImgPath = rollName.imageFile;
 
 // set up objects to store information
-const roll = {
+let roll = {
     glazing: 0,
     packSize: 1,
     basePrice: rollPrice,
     finalPrice: 2.49,
+    glazingName: 'Keep original',
 };
 
 const glazing = {
@@ -82,7 +85,9 @@ function displayPrice(roll){
 // update roll.glazing when dropdown menu for glazing changes
 function onSelectGlazingChange(){
     const selectedOption = selectGlazing.options[selectGlazing.selectedIndex];
+    roll.glazingName = selectedOption.text;
     roll.glazing = glazing[(selectedOption.text)];
+    console.log(roll.glazing);
     displayPrice(roll);
 };
 
@@ -93,11 +98,27 @@ function onSelectPackSizeChange(){
     displayPrice(roll);
 };
 
+//////////////////////////////////////////////////////////////////
+// When users click "add to cart", store information
+
+function onAddToCartClick(){
+    let someRoll = new RollClass(rollType, roll.glazingName, roll.packSize, rollPrice);
+    console.log('sssss');
+    console.log(someRoll);
+    cart.push(someRoll);
+    console.log('sssss');
+    console.log(cart);
+};
+
 displayPrice(roll);
 
 // set onchange property 
 selectGlazing.onchange = onSelectGlazingChange;
 selectPackSize.onchange = onSelectPackSizeChange;
+
+cartButton = document.querySelector('#cart-button');
+console.log(cartButton);
+cartButton.onclick = onAddToCartClick;
 
 
 
