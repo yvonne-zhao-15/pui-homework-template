@@ -24,10 +24,12 @@ const rollImgPath = rollName.imageFile;
 
 // initialized to default values, store current roll info
 // properties are updated when user select an option in dropdown menu
+// Opt stands for option, and Adp stands for price adaptation
 let currRoll = {
-    glazingName: 'Keep original',
-    glazing: 0, 
-    packSize: 1,
+    glazingOpt: 'Keep original',
+    glazingAdp: 0, 
+    packSizeOpt: '1',
+    packSizeAdp: 1,
     basePrice: rollPrice,
     finalPrice: rollPrice,
 };
@@ -42,8 +44,8 @@ const glazing = {
 const packSize = {
     '1': 1,
     '3': 3,
-    '6': 6,
-    '12': 12,
+    '6': 5,
+    '12': 10,
 };
 
 // select the dropdown menu
@@ -78,29 +80,31 @@ image.src = "../assets/products/" + rollImgPath;
 // compute and display the final price
 // update: use rollPrice as baseprice
 function displayPrice(currRoll){
-    currRoll.finalPrice = ((currRoll.basePrice + currRoll.glazing) * currRoll.packSize).toFixed(2);
+    currRoll.finalPrice = ((currRoll.basePrice + currRoll.glazingAdp) * currRoll.packSizeAdp).toFixed(2);
     document.querySelector('.detail-price').innerText = '$' + currRoll.finalPrice;
 };
 
-// update currRoll.glazing and .glazingName 
+// update currRoll.glazingOpt and .glazingAdp
 // when dropdown menu for glazing changes
 function onSelectGlazingChange(){
     const selectedOption = selectGlazing.options[selectGlazing.selectedIndex];
-    currRoll.glazingName = selectedOption.text;
-    currRoll.glazing = glazing[currRoll.glazingName];
+    currRoll.glazingOpt = selectedOption.text;
+    currRoll.glazingAdp = glazing[currRoll.glazingOpt];
     displayPrice(currRoll);
 };
 
-// update currRoll.packSize when dropdown menu for packSize changes
+// update currRoll.packSizeOpt and .packSizeAdp 
+// when dropdown menu for packSize changes
 function onSelectPackSizeChange(){
     const selectedOption = selectPackSize.options[selectPackSize.selectedIndex];
-    currRoll.packSize = packSize[(selectedOption.text)];
+    currRoll.packSizeOpt = selectedOption.text;
+    currRoll.packSizeAdp= packSize[currRoll.packSizeOpt];
     displayPrice(currRoll);
 };
 
 // When users click "add to cart", store curr roll information
 function onAddToCartClick(){
-    let someRoll = new RollClass(rollType, currRoll.glazingName, currRoll.packSize, rollPrice);
+    let someRoll = new RollClass(rollType, currRoll.glazingOpt, currRoll.packSizeOpt, rollPrice);
     cart.push(someRoll);
     console.log(cart);
 };
