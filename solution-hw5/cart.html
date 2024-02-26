@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
     <link rel="stylesheet" type="text/css" href="gallery_style.css">
+    <script src="cart.js" defer></script>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         <ul class="navigation">
           <li class="h2"><a href="index.html" class="no-underline">PRODUCTS</a></li>
           <li>
-            <span class="h-cart"><a href="cart.html" class="no-underline">CART</a></span> <sup>2</sup>
+            <span class="h-cart"><a href="cart.html" class="no-underline">CART</a></span> <sup id="count">2</sup>
           </li>
         </ul>
         <hr class="shortline">
@@ -26,34 +27,30 @@
     </div>
 
     <!--Cart-->
-    <div class="product"> <!--make this a flex container-->
-      <img src="../assets/products/original-cinnamon-roll.jpg" alt="This is an image" class="cart-img">
-      <div>
-        <div class="text">Orginal Cinnamon Roll</div>
-        <div class="text">Glazing: Keep original</div>
-        <div class="text">Pack Size: 1</div>
-      </div>
-      <div class="cart-price">$ 2.49</div>
-      <div class="remove">Remove</div>
+    <div id="cart-list"> 
+
+      <template id="template">
+        <div class="product">
+          <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="This is an image" class="cart-img">
+          <div>
+            <div class="text" id="text1-name">Double Chocolate Cinnamon Roll</div>
+            <div class="text" id="text2-glazing">Glazing: Sugar milk</div>
+            <div class="text" id="text3-pack">Pack Size: 6</div>
+          </div>
+          <div class="cart-price">$ 27.45</div>
+          <div class="remove">Remove</div>
+        </div>
+      </template>
+
     </div>
 
-    <div class="product">
-      <img src="../assets/products/double-chocolate-cinnamon-roll.jpg" alt="This is an image" class="cart-img">
-      <div>
-        <div class="text">Double Chocolate Cinnamon Roll</div>
-        <div class="text">Glazing: Sugar milk</div>
-        <div class="text">Pack Size: 6</div>
-      </div>
-      <div class="cart-price">$ 27.45</div>
-      <div class="remove">Remove</div>
+    <div class="product"> 
       <hr class="shortline">
       <div id="empty-img"></div>
       <div class="text"> Total </div>
-      <div class="cart-price"> $ 29.94</div>
+      <div class="cart-price" id="finalPrice"> $ 29.94</div>
       <div id="all-row"><button id="checkout-button">Checkout</button></div>
     </div>
-
-      
 
     <div class="emptyspace"> <br> </div>
 

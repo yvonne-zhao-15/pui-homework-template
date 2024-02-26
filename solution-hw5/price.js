@@ -77,6 +77,7 @@ const image = document.getElementById('detail-image');
 image.src = "../assets/products/" + rollImgPath;
 ////////////////////////////
 
+
 // compute and display the final price
 // update: use rollPrice as baseprice
 function displayPrice(currRoll){

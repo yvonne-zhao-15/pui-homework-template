@@ -229,15 +229,21 @@ select{
     display: flex;
     justify-content: flex-start; 
     flex-wrap: wrap;
+}
 
+#template{
+    margin: 0px 0px 0px 400px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start; 
+    flex-wrap: wrap;
 }
 
 .cart-price{
     text-align: right;
     font-size: 22px;
     align-self: center;
-    flex-grow: 1;
-    
+    flex-grow: 1; 
 }
 
 .text{
@@ -288,6 +294,7 @@ select{
     background-color: black;
     width: 900px;
     margin: 0px;
+    align-content: center;
 }
 
 #empty-img{
