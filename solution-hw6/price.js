@@ -68,7 +68,7 @@ for (const p in packSize){
 
 ////////////////////////////
 // hw4
-const cart = [];
+// const cart = [];
 
 // update heading and img src based on url
 const heading = document.getElementById('url-type');
@@ -105,10 +105,39 @@ function onSelectPackSizeChange(){
 
 // When users click "add to cart", store curr roll information
 function onAddToCartClick(){
+    let cart = loadOrInitializeCart();
     let someRoll = new RollClass(rollType, currRoll.glazingOpt, currRoll.packSizeOpt, rollPrice);
     cart.push(someRoll);
+    updateNumberOfItems(cart);
+
+    // new for HW6
+    // update cart to jsonCart
+    localStorage.setItem("cartKey", JSON.stringify(cart));
     console.log(cart);
 };
+
+// when the page loads, retrive cart, if not existed, initialize cart
+function loadOrInitializeCart(){
+    let jsonCart = localStorage.getItem("cartKey");
+    console.log(jsonCart);
+    let cart;
+    // if jsonCart is not null, retrieve cart
+    if (jsonCart){ 
+        cart = JSON.parse(jsonCart);
+    } else{
+        // if jsonCart is null, initialize cart and store cart to json
+        cart = [];
+        localStorage.setItem("cartKey", JSON.stringify(cart));
+    }
+
+    return cart;
+}
+
+function clearCart(){
+    localStorage.clear();
+}
+
+//clearCart();
 
 // set onchange property for 2 dropdown menu and 'add to cart' button
 selectGlazing.onchange = onSelectGlazingChange;

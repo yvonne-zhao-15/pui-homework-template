@@ -95,16 +95,34 @@ function removeItem(r){
 
     displayFinalPrice(cart);
     updateNumberOfItems(cart);
+    localStorage.setItem("cartKey", JSON.stringify(cart));
 };
 
+// when the page loads, retrive cart, if not existed, initialize cart
+function loadOrInitializeCart(){
+    let jsonCart = localStorage.getItem("cartKey");
+    console.log(jsonCart);
+    let cart;
+    // if jsonCart is not null, retrieve cart
+    if (jsonCart){ 
+        cart = JSON.parse(jsonCart);
+    } else{
+        // if jsonCart is null, initialize cart and store cart to json
+        cart = [];
+        localStorage.setItem("cartKey", JSON.stringify(cart));
+    }
+    return cart;
+}
 
-let cart = [];
+ 
 
 // create 4 rolls and add them to cart
-addNewRoll('Original', 'Sugar milk', 1, 2.49);
-addNewRoll('Walnut', 'Vanilla milk', 12, 3.49);
-addNewRoll('Raisin', 'Sugar milk', 3, 2.99);
-addNewRoll('Apple', 'Keep original', 3, 3.49);
+// addNewRoll('Original', 'Sugar milk', 1, 2.49);
+// addNewRoll('Walnut', 'Vanilla milk', 12, 3.49);
+// addNewRoll('Raisin', 'Sugar milk', 3, 2.99);
+// addNewRoll('Apple', 'Keep original', 3, 3.49);
+
+let cart = loadOrInitializeCart();
 
 // initial displays
 displayFinalPrice(cart);
