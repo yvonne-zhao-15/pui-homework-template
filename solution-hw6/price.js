@@ -137,7 +137,6 @@ function clearCart(){
     localStorage.clear();
 }
 
-//clearCart();
 
 // set onchange property for 2 dropdown menu and 'add to cart' button
 selectGlazing.onchange = onSelectGlazingChange;

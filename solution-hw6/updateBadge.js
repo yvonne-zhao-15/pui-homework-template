@@ -1,3 +1,4 @@
+
 // when the page loads, retrive cart, if not existed, initialize cart
 function loadOrInitializeCart(){
     let jsonCart = localStorage.getItem("cartKey");
