@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+.cuisine-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cuisine {
+    margin: 10px;
+    text-align: center;
+}
+
+.cuisine img {
+    width: 100px; /* Or whatever size you prefer */
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
