@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link rel="stylesheet" type="text/css" href="gallery_style.css">
+    <script src="rollsData.js" defer></script>
+    <script src="price.js" defer></script>
+    <script src="updateBadge.js" defer></script>
+</head>
+
+<body>
+    <!--Header-->
+    <div class="header-container">
+      <a href="index.html">
+        <img src="../assets/logo/logo-01.svg" alt="This is an image" class="logo"> 
+      </a>
+      <!--Titles-->
+      <div class="smaller-container"> <!--make this a flexbox-->
+        <ul class="navigation">
+          <li class="h1"><a href="index.html" class="no-underline">PRODUCTS</a></li>
+          <li class="h2"><a href="cart.html" class="no-underline">CART<sup id="count">0</sup></a> </li>
+        </ul>
+        <hr class="shortline">
+        <div class="h3" id="url-type">Our hand-made cinnamon rolls</div>
+      </div>
+    </div>
+
+
+    <div class="main-container">
+      <div class="roll-detail">
+        <img src="../assets/products/original-cinnamon-roll.jpg" alt="This is an image" id="detail-image">
+      </div>
+  
+      <div class="options"> <!--smaller container-->
+        <div class="description">Customize our delicious, hand-making cinnamons to your liking!</div>
+        <div>
+          <div class="description"> <div>Glazing:</div>
+            <select name="glazing" id="dropdown1">
+
+            </select>
+          </div>
+          
+          <div class="description"><div>Pack size: </div>
+            <select name="pack-size" id="dropdown2">
+
+            </select>
+          </div>
+        </div>
+        <div class="detail-action">
+            <span class="detail-price">$2.49</span> 
+            <button id="cart-button"> Add to Cart</button>
+        </div>
+        
+  
+      </div>
+    </div>
+    
+
+
+    <div class="emptyspace"> <br> </div>
+
+</body>
+</html>

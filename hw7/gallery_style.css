@@ -1,0 +1,369 @@
+body{
+    font-family: Montserrat;
+    font-size: 2vw;
+}
+
+:lang(zh) {
+    font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+#background{
+    height:auto;
+    width: 100vw;
+    opacity: 10%;
+}
+
+.no-underline{
+    text-decoration: none;
+    color: black;
+}
+
+.lefttext{
+    text-align: left;
+}
+
+.header-container{
+    width: 100vw;
+    display: flex;
+    margin-bottom: 0vh;
+}
+
+.smaller-container{
+    margin: 1vh;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px 5px;
+}
+
+.logo {
+    width: 14vw;
+    height: auto;
+    text-align: left;
+    margin: 0;
+}
+
+#title{
+    font-size: 5vw;
+}
+
+.subtitle{
+    font-size: 3vw;
+}
+
+li{
+    display: inline;
+    margin: 0px 30px;
+}
+
+sup{
+    background-color: red;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 50%;
+    margin: 0px 0px;
+}
+
+hr{
+    height: 2px;
+    background-color: black;
+    border: 0;
+    margin: 0;
+}
+
+.h1{
+    font-weight: bold;
+    background-color: yellow;
+    color: black;
+}
+
+.h-cart > a{
+    font-weight: bold;
+    background-color: yellow;
+    color: black;
+}
+
+.h2{
+    text-align: center;
+    color: black;
+}
+
+.h3{
+    align-items: baseline;
+    padding: 40px 0px 0px 0px;
+}
+
+
+.all-cuisines{
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3vh 2vw;
+    justify-content: center;
+    gap: 3vh 2vw;
+    align-items: first baseline;
+    padding: 0.5vh 2vw;
+}
+
+
+.site-footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 20px; /* Adjust padding as necessary */
+    color: white; /* For better visibility against a darker background */
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./images/bamboo bg.jpg"); /* Set your footer image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2; /* Adjust opacity here */
+    z-index: -1;
+}
+
+.cuisines{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;  
+    flex-wrap: wrap;
+}
+
+.img{
+    width: auto;
+    padding: 10px;
+}
+
+.img:hover{
+    padding: 10px;
+    background-color: yellow;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.name{
+    align-self:flex-start; 
+    text-align: right;
+    font-size: clamp(1.375rem, 3vw, 1.75rem);
+    margin: 1vh 0px;
+    color: black;
+    text-decoration: underline;
+}
+
+.flavor{
+    width: 285px;
+    text-align: right;
+    align-self: flex-start;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    
+    font-weight: normal;
+    color: black;
+    text-wrap: wrap;
+}
+
+img.galleryimg{
+    width: 285px;
+    height: auto;
+    border-style: solid;
+    border-width: 2.5px;
+    border-color: black;
+}
+
+@media (max-width:500px) {
+    img.galleryimg{
+        width: 150px;
+        height: auto;
+        border-style: solid;
+        border-width: 2.5px;
+        border-color: black;
+    }
+}
+
+
+/* Product Detail */
+
+.roll-detail{
+    text-align: center;
+}
+
+.main-container{
+    align-items: flex-start; 
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 1200px;
+    padding: 50px 60px;
+    justify-content: center;
+}
+
+.description{
+    margin: 25px 0px;
+    text-align: left;
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+.options{
+    width: 300px;
+    height: 605px;
+    padding: 0px 10px 0px 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+select{
+    font-size: 22px;
+    text-align: left;
+    padding: 5px 10px;
+    padding-left: 10px;
+    width: 140%;
+    height: 40px;
+    margin: 10px 0px;
+}
+
+#detail-image{
+    width: 600px;
+    height: 600px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+}
+
+.detail-action{
+    align-self: flex-end;
+}
+
+.detail-price{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#cart-button{
+    font-size: 20px;
+    font-weight: bold;
+    width: 170px;
+    height: 40px;
+    background-color: yellow;
+    margin-left: 20px;
+}
+
+
+/* Shopping Cart */
+.cart-img{
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+.product{
+    margin: 0px 0px 0px 400px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start; 
+    flex-wrap: wrap;
+}
+
+#template{
+    margin: 0px 0px 0px 400px;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start; 
+    flex-wrap: wrap;
+}
+
+.cart-price{
+    text-align: right;
+    font-size: 22px;
+    align-self: center;
+    flex-grow: 1; 
+}
+
+.text{
+    margin: 20px;
+    text-align: left;
+    font-size: 22px;
+}
+
+.remove{
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 20px 0px;
+    width: 100%;
+    align-self: flex-start;
+    text-align: left;
+}
+
+#checkout-button{
+    font-size: 22px;
+    font-weight: bold;
+    width: 150px;
+    height: 75px;
+    background-color: yellow;
+    text-align: center;
+    justify-content: end;
+    flex-grow: 1;
+}
+
+.emptyspace{
+    margin: 300px;
+}
+
+#h2-cart{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    background-color: yellow;
+}
+
+#h1-cart{
+    margin: 40px;
+    color: black;
+}
+
+.shortline{
+    height: 4px;
+    background-color: black;
+    width: 900px;
+    margin: 0px;
+    align-content: center;
+}
+
+#empty-img{
+    width: 200px;
+}
+
+#all-row{
+    width: 1000px;
+    text-align: right;
+}
+
+
+
+footer{
+ 
+}
+footer p{
+    font-size: 12px;
+    color: black;
+    margin: auto;
+    padding: 1% 6vw;
+}
