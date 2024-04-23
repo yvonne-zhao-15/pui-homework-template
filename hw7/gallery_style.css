@@ -102,7 +102,7 @@ hr{
 
 .cuisine-container:hover{
     padding: 10px;
-    background-color: yellow;
+    background-color: #d3f0b6;
     font-weight: bold;
     cursor: pointer;
 }
@@ -183,7 +183,7 @@ footer p{
 .facts-box{
     flex: 0 0 25%;
     background-color: #d3f0b6;
-    padding: 1vh 2vw;
+    padding: 3vh 2vw;
     border-width: 2px;
     border-color: black;
     border-style: none;
