@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chinese Cuisines Gallery</title>
-  <link rel="stylesheet" type="text/css" href="gallery_style.css">
-  <script src="updateBadge.js" defer></script>
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Cuisines Gallery</title>
+    <link rel="stylesheet" type="text/css" href="gallery_style.css">
+    <script src="updateBadge.js" defer></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
 
   
   <body>
@@ -27,7 +28,7 @@
     <div class="all-cuisines">
       <div class = "cuisines">
         <a href="details.html?roll=Original" class="no-underline"> 
-          <div class="img"> 
+          <div class="cuisine-container"> 
             <img src="./images/Anhui.jpeg" alt="Anhui cuisine image" class="galleryimg">
             <div class="name">Anhui Cuisine</div>
             <div class="flavor">salty, fresh, light</div>
@@ -37,7 +38,7 @@
   
       <div class = "cuisines">
         <a href="details.html?roll=Apple" class="no-underline"> 
-          <div class="img">
+          <div class="cuisine-container">
             <img src="./images/Cantonese.jpeg" alt="Cantonese cuisine image" class="galleryimg">
             <div class="name">Cantonese Cuisine</div>
             <div class="flavor">mild, fresh, natural</div>
@@ -47,7 +48,7 @@
   
       <div class = "cuisines">
         <a href="details.html?roll=Raisin" class="no-underline"> 
-          <div class="img">
+          <div class="cuisine-container">
             <img src="./images/Fujian.jpeg" alt="Fujian cuisine image" class="galleryimg">
             <div class="name">Fujian Cuisine</div>
             <div class="flavor">light, fresh, healthy</div>
@@ -57,7 +58,7 @@
   
       <div class = "cuisines">
         <a href="details.html?roll=Walnut" class="no-underline"> 
-          <div class="img">
+          <div class="cuisine-container">
             <img src="./images/Shandong.jpeg" alt="Shandong cuisine image" class="galleryimg">
             <div class="name">Shandong Cuisine</div>
             <div class="flavor">umami, salty, sweet</div>
@@ -67,7 +68,7 @@
   
       <div class = "cuisines">
         <a href="details.html?roll=Double-Chocolate" class="no-underline"> 
-          <div class="img">
+          <div class="cuisine-container">
             <img src="./images/Sichuan.jpeg" alt="Sichuan cuisine image" class="galleryimg">
             <div class="name"> Sichuan Cuisine</div>
             <div class="flavor">hot, spicy, mouth-numbing</div>
@@ -77,7 +78,7 @@
   
       <div class = "cuisines">
         <a href="details.html?roll=Strawberry" class="no-underline"> 
-          <div class="img">
+          <div class="cuisine-container">
             <img src="./images/Zhejiang.jpeg" alt="Zhejiang cuisine image" class="galleryimg">
             <div class="name">Zhejiang Cuisine</div>
             <div class="flavor">light, fresh, original</div>
@@ -87,7 +88,7 @@
 
       <div class = "cuisines">
         <a href="details.html?roll=Original" class="no-underline"> 
-          <div class="img"> 
+          <div class="cuisine-container"> 
             <img src="./images/Jiangsu.jpeg" alt="Jiangsu cuisine image" class="galleryimg">
             <div class="name">Jiangsu Cuisine</div>
             <div class="flavor">umami, mild, original</div>
@@ -97,16 +98,16 @@
       
       <div class = "cuisines">
         <a href="details.html?roll=Original" class="no-underline"> 
-          <div class="img"> 
+          <div class="cuisine-container"> 
             <img src="./images/Hunan.jpeg" alt="Hunan cuisine image" class="galleryimg">
             <div class="name">Hunan Cuisine</div>
             <div class="flavor">hot, spicy, salty</div>
           </div>
         </a>
       </div>
-
-
     </div>
+    
+    <!--Footer-->
     <hr>
     <footer class="site-footer">
       
@@ -118,7 +119,7 @@
         To read more, refer to their page on 
           <a href="https://www.travelchinaguide.com/intro/cuisine_drink/cuisine/eight_cuisines.htm" target="_blank" rel="noopener noreferrer">Chinese Cuisines</a>.
       </p>
-  </footer>
+    </footer>
   
 
   </body>

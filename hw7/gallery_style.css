@@ -1,25 +1,16 @@
 body{
     font-family: Montserrat;
-    font-size: 2vw;
+    font-size: clamp(0.8rem, 2vw, 1rem); /* Adjust these values as needed */
+
 }
 
 :lang(zh) {
     font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
 }
 
-#background{
-    height:auto;
-    width: 100vw;
-    opacity: 10%;
-}
-
 .no-underline{
     text-decoration: none;
     color: black;
-}
-
-.lefttext{
-    text-align: left;
 }
 
 .header-container{
@@ -52,48 +43,12 @@ body{
     font-size: 3vw;
 }
 
-li{
-    display: inline;
-    margin: 0px 30px;
-}
-
-sup{
-    background-color: red;
-    color: white;
-    padding: 2px 4px;
-    border-radius: 50%;
-    margin: 0px 0px;
-}
-
 hr{
     height: 2px;
     background-color: black;
     border: 0;
     margin: 0;
 }
-
-.h1{
-    font-weight: bold;
-    background-color: yellow;
-    color: black;
-}
-
-.h-cart > a{
-    font-weight: bold;
-    background-color: yellow;
-    color: black;
-}
-
-.h2{
-    text-align: center;
-    color: black;
-}
-
-.h3{
-    align-items: baseline;
-    padding: 40px 0px 0px 0px;
-}
-
 
 .all-cuisines{
     width: auto;
@@ -105,7 +60,6 @@ hr{
     align-items: first baseline;
     padding: 0.5vh 2vw;
 }
-
 
 .site-footer {
     position: relative;
@@ -141,12 +95,12 @@ hr{
     flex-wrap: wrap;
 }
 
-.img{
+.cuisine-container{
     width: 290px;
     padding: 10px;
 }
 
-.img:hover{
+.cuisine-container:hover{
     padding: 10px;
     background-color: yellow;
     font-weight: bold;
@@ -165,14 +119,12 @@ hr{
 
 .flavor{
     text-align: left;
-    align-self: flex-start;
     font-size: clamp(1.125rem, 2vw, 1.4rem);
-    flex: 0 1 auto;
-
-    
     font-weight: normal;
     color: black;
     text-wrap: wrap;
+    text-decoration: none;
+    color: black;
 }
 
 img.galleryimg{
@@ -183,7 +135,7 @@ img.galleryimg{
     border-color: black;
 }
 
-@media (max-width:700px) {
+@media (max-width:500px) {
     img.galleryimg{
         text-align: center;
         width: 150px;
@@ -192,7 +144,7 @@ img.galleryimg{
         border-width: 2.5px;
         border-color: black;
     }
-    .img{
+    .cuisine-container{
         text-align: center;
         width: 150px;
     }
@@ -202,181 +154,74 @@ img.galleryimg{
     .flavor{
         text-align: center;
     }
+    #main-content{
+        flex-direction: column;
+    }
 }
 
-
-/* Product Detail */
-
-.roll-detail{
-    text-align: center;
-}
-
-.main-container{
-    align-items: flex-start; 
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-    width: 1200px;
-    padding: 50px 60px;
-    justify-content: center;
-}
-
-.description{
-    margin: 25px 0px;
-    text-align: left;
-    font-size: 22px;
-    padding-left: 10px;
-}
-
-.options{
-    width: 300px;
-    height: 605px;
-    padding: 0px 10px 0px 10px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-select{
-    font-size: 22px;
-    text-align: left;
-    padding: 5px 10px;
-    padding-left: 10px;
-    width: 140%;
-    height: 40px;
-    margin: 10px 0px;
-}
-
-#detail-image{
-    width: 600px;
-    height: 600px;
-    border-style: solid;
-    border-width: 3px;
-    border-color: black;
-}
-
-.detail-action{
-    align-self: flex-end;
-}
-
-.detail-price{
-    font-weight: bold;
-    font-size: 22px;
-}
-
-#cart-button{
-    font-size: 20px;
-    font-weight: bold;
-    width: 170px;
-    height: 40px;
-    background-color: yellow;
-    margin-left: 20px;
-}
-
-
-/* Shopping Cart */
-.cart-img{
-    width: 200px;
-    height: 200px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-}
-
-.product{
-    margin: 0px 0px 0px 400px;
-    text-align: center;
-    display: flex;
-    justify-content: flex-start; 
-    flex-wrap: wrap;
-}
-
-#template{
-    margin: 0px 0px 0px 400px;
-    text-align: center;
-    display: flex;
-    justify-content: flex-start; 
-    flex-wrap: wrap;
-}
-
-.cart-price{
-    text-align: right;
-    font-size: 22px;
-    align-self: center;
-    flex-grow: 1; 
-}
-
-.text{
-    margin: 20px;
-    text-align: left;
-    font-size: 22px;
-}
-
-.remove{
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: underline;
-    margin: 20px 0px;
-    width: 100%;
-    align-self: flex-start;
-    text-align: left;
-}
-
-#checkout-button{
-    font-size: 22px;
-    font-weight: bold;
-    width: 150px;
-    height: 75px;
-    background-color: yellow;
-    text-align: center;
-    justify-content: end;
-    flex-grow: 1;
-}
-
-.emptyspace{
-    margin: 300px;
-}
-
-#h2-cart{
-    text-align: center;
-    color: black;
-    font-weight: bold;
-    background-color: yellow;
-}
-
-#h1-cart{
-    margin: 40px;
-    color: black;
-}
-
-.shortline{
-    height: 4px;
-    background-color: black;
-    width: 900px;
-    margin: 0px;
-    align-content: center;
-}
-
-#empty-img{
-    width: 200px;
-}
-
-#all-row{
-    width: 1000px;
-    text-align: right;
-}
-
-
-
-footer{
- 
-}
 footer p{
-    font-size: 12px;
     color: black;
     margin: auto;
     padding: 1% 6vw;
+}
+
+.emptyspace{
+    height: 60vw;
+}
+
+
+/* Cuisine Detail Page */
+#main-content{
+    justify-content: center;
+    display: flex;
+    border-width: 2px;
+    border: black;
+    padding: 0.5vh 2vw;
+    /* align-items: center; */
+}
+
+.facts-box{
+    flex: 0 0 25%;
+    background-color: #d3f0b6;
+    padding: 1vh 2vw;
+    border-width: 2px;
+    border-color: black;
+    border-style: none;
+
+    line-height: 2rem;
+    font-size: clamp(1.125rem, 2vw, 1.4rem);
+}
+
+.facts-box-heading{
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    font-weight: bold;
+}
+
+.facts-box li{
+    font-size: clamp(1.1rem, 1.9vw, 1.3rem);
+}
+
+#description{
+    flex: 0 0 60%;
+    padding: 3vh 2vw;
+
+    line-height: 2rem;
+    font-size: clamp(1.1rem, 1.9vw, 1.3rem);
+    text-indent: 2rem;
+}
+
+.dishes{
+    font-weight: bold;
+}
+
+.dishes:hover{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+iframe{
+    margin: 2vw;
+    width: 90%;
+    aspect-ratio: 16 / 9;
 }

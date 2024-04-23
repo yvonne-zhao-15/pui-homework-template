@@ -1,64 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Product Detail</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Cuisines</title>
     <link rel="stylesheet" type="text/css" href="gallery_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="detail.js" defer></script>
+
+    <!-- 
     <script src="rollsData.js" defer></script>
     <script src="price.js" defer></script>
     <script src="updateBadge.js" defer></script>
+    -->
+
 </head>
+
 
 <body>
     <!--Header-->
     <div class="header-container">
       <a href="index.html">
-        <img src="../assets/logo/logo-01.svg" alt="This is an image" class="logo"> 
+        <img src="./images/icon.png" alt="This is an icon of a bowl of rice" class="logo"> 
       </a>
       <!--Titles-->
       <div class="smaller-container"> <!--make this a flexbox-->
-        <ul class="navigation">
-          <li class="h1"><a href="index.html" class="no-underline">PRODUCTS</a></li>
-          <li class="h2"><a href="cart.html" class="no-underline">CART<sup id="count">0</sup></a> </li>
+        <div id="title">Chinese Cuisines</div>
+        <div class="subtitle" lang="zh"> Anhui Cuisine 徽菜 </div>
+      </div>
+    <hr>
+    </div>
+
+    <div id="main-content">
+      <div class="facts-box">
+        <div class="facts-box-heading">Facts about Anhui Cuisine </div>
+        <ul>
+          <li>
+            Chinese Name: 徽菜 huī cài
+          </li>
+          <li>
+            English Names: Anhui cuisine, Hui cuisine, Huizhou cuisine
+          </li>
+          <li>
+            Popular in: China's Anhui Province
+          </li>
+          <li>
+            Flavors: salty and fresh, light, the original flavor of wild ingredients
+          </li>
+          <li>
+            Famous Anhui Dishes: 
+              <ul>
+                <li class="dishes">Stincky Mandarin Fish</li>
+                <li class="dishes">
+                  Fried Hairy Tofu
+                </li>
+              </ul>
+          </li>
         </ul>
-        <hr class="shortline">
-        <div class="h3" id="url-type">Our hand-made cinnamon rolls</div>
+
+      </div>
+
+      <div id="description">
+        Anhui cuisine, or simply Hui cuisine, is originated over 1,000 years ago from Huizhou, 
+        the current Shexian County at the foot of Yellow Mountain in Anhui Province. 
+        Anhui cuisine is one of the eight Chinese cuisines. 
+        The ingredients are mostly from the wild, and the flavor is light. 
+        Anhui cuisine attaches importance to dietetic invigoration with natural ingredients. 
+        The representative dishes and Anhui cuisine desserts include Stinky Mandarin Fish, Fried Hairy Tofu, 
+        Steamed Partridge, Stewed Bamboo Shoots of Wenzheng Mountain, Huangshan Stewed Pigeon, Li Hongzhang Chop Suey, etc.
+
       </div>
     </div>
 
 
-    <div class="main-container">
-      <div class="roll-detail">
-        <img src="../assets/products/original-cinnamon-roll.jpg" alt="This is an image" id="detail-image">
-      </div>
-  
-      <div class="options"> <!--smaller container-->
-        <div class="description">Customize our delicious, hand-making cinnamons to your liking!</div>
-        <div>
-          <div class="description"> <div>Glazing:</div>
-            <select name="glazing" id="dropdown1">
-
-            </select>
-          </div>
-          
-          <div class="description"><div>Pack size: </div>
-            <select name="pack-size" id="dropdown2">
-
-            </select>
-          </div>
-        </div>
-        <div class="detail-action">
-            <span class="detail-price">$2.49</span> 
-            <button id="cart-button"> Add to Cart</button>
-        </div>
-        
-  
-      </div>
-    </div>
-    
-
-
-    <div class="emptyspace"> <br> </div>
+    <!--Footer-->
+    <br class="emptyspace">
+    <hr>
+    <footer class="site-footer">
+      
+      <p>Image Credits: The images featured on this website were generated using DALL·E 3 by OpenAI. 
+        For more information, please visit 
+          <a href="https://openai.com/dall-e-3" target="_blank" rel="noopener noreferrer">OpenAI's DALL·E 3</a>.
+      </p>
+      <p>Content Source: The textual content presented on this website has been sourced from the Travel China Guide. 
+        To read more, refer to their page on 
+          <a href="https://www.travelchinaguide.com/intro/cuisine_drink/cuisine/eight_cuisines.htm" target="_blank" rel="noopener noreferrer">Chinese Cuisines</a>.
+      </p>
+    </footer>
 
 </body>
 </html>
