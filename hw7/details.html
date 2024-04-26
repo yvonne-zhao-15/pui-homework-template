@@ -8,6 +8,8 @@
     <script src="cuisinesData.js" defer></script>
     
     <script src="detail.js" defer></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+
 
 
 </head>
@@ -31,17 +33,12 @@
       <div class="facts-box">
         <div id="facts-box-heading">Facts about </div>
         <ul>
-          <li id="origin">
-            Origin: China's Anhui Province
-          </li>
-          <li id="flavors">
-            Flavors: salty and fresh, light, the original flavor of wild ingredients
-          </li>
-          <li>
-            Famous Dishes: 
+          <li><span class="bullets">Origin: </span><span id="origin"></span></li>
+          <li><span class="bullets">Flavors: </span><span id="flavors"></span></li>
+          <li> Famous Dishes: 
               <ul>
-                <li class="dishes" id="dishes1">Stincky Mandarin Fish</li>
-                <li class="dishes" id="dishes2"> Fried Hairy Tofu </li>
+                <li class="dishes" id="dishes1" onclick="displayVideo(this)"></li>
+                <li class="dishes" id="dishes2" onclick="displayVideo(this)"> </li>
               </ul>
           </li>
         </ul>
@@ -49,14 +46,8 @@
       </div>
 
       <div id="description">
-        Anhui cuisine, or simply Hui cuisine, is originated over 1,000 years ago from Huizhou, 
-        the current Shexian County at the foot of Yellow Mountain in Anhui Province. 
-        Anhui cuisine is one of the eight Chinese cuisines. 
-        The ingredients are mostly from the wild, and the flavor is light. 
-        Anhui cuisine attaches importance to dietetic invigoration with natural ingredients. 
-        The representative dishes and Anhui cuisine desserts include Stinky Mandarin Fish, Fried Hairy Tofu, 
-        Steamed Partridge, Stewed Bamboo Shoots of Wenzheng Mountain, Huangshan Stewed Pigeon, Li Hongzhang Chop Suey, etc.
-
+        <div id="text"></div>
+        <div id="video"></div>
       </div>
     </div>
 

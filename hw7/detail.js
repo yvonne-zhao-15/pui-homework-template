@@ -14,7 +14,7 @@ function updatePage(cuisineType){
   const heading = document.getElementById('heading');
   heading.innerText = cuisines[cuisineType].name;
   // text description
-  const description = document.getElementById('description');
+  const description = document.getElementById('text');
   description.innerText = cuisines[cuisineType].description;
   // facts box
   // heading
@@ -22,7 +22,7 @@ function updatePage(cuisineType){
   boxHeading.innerText = boxHeading.innerText + ' ' + cuisineType;
   // origin
   const origin = document.getElementById('origin');
-  origin.innerText = cuisines[cuisineType].origin;
+  origin.innerText = originInfo[cuisineType].origin;
   // flavors
   const flavors = document.getElementById('flavors');
   flavors.innerText = cuisines[cuisineType].flavors;
@@ -31,38 +31,55 @@ function updatePage(cuisineType){
   dish1.innerText = cuisines[cuisineType].dishes[0];
   const dish2 = document.getElementById('dishes2');
   dish2.innerText = cuisines[cuisineType].dishes[1]; 
-
 }
 
-updatePage(cuisineType);
+// Load YouTube API, code from ChatGPT
+function start() {
+  gapi.client.init({
+      'apiKey': 'AIzaSyCACYHeXnER3m10ALSdTm848Ob8xWvIwpI'
+  }).then(function() {
+      return gapi.client.load('youtube', 'v3');
+  }).then(function() {
+      console.log('API ready to use');
+  }, function(error) {
+      console.error('Error loading GAPI client for API', error);
+  });
+}
 
+gapi.load('client', start);
 
-const dish = document.querySelectorAll('.dishes');
+function searchVideos(keyword, callback, maxResults = 1) {
+  var request = gapi.client.youtube.search.list({
+      q: keyword,
+      part: 'snippet',
+      type: 'video',
+      maxResults: maxResults
+  });
 
-function updateMainContent(content){
-
-};
-
-dish.forEach(function(element) {
-    element.addEventListener('click', function() {
-      // Function to execute when the element is clicked
-      console.log('Element clicked:', element.textContent);
-      if (element.textContent.trim() === "Stincky Mandarin Fish"){
-        document.getElementById('description').innerHTML = `
-            <div style="font-weight:bold"> <span class="nav-name">Anhui</span> > Stincky Mandarin Fish </div>
-            <iframe src="https://www.youtube.com/embed/SmUIJk7sFqw" frameborder="0" allowfullscreen></iframe>`
-      } else{
-        document.getElementById('description').innerHTML = `
-            <div style="font-weight:bold"> <span class="nav-name">Anhui</span> > Fried Hairy Tofu </div>
-            <iframe src="https://www.youtube.com/embed/vKUKDWwnJYs" frameborder="0" allowfullscreen></iframe>`
+  request.execute(function(response) {
+      if (response.items.length > 0) {
+          const videoID = response.items[0].id.videoId;
+          callback(videoID);  // Call the callback with the video ID
+      } else {
+          console.log("No videos found.");
+          callback(null);
       }
-      // updateMainContent(element.textContent);
-    });
-});
+  });
+}
 
-const AnhuiElements = document.querySelectorAll(".nav-name");
-AnhuiElements.forEach(function(Anhui) {
-    Anhui.addEventListener('click', function(){
-    document.getElementById('description').innerText = 'Anhui cuisine, or simply Hui cuisine, is originated over 1,000 years ago from Huizhou, the current Shexian County at the foot of Yellow Mountain in Anhui Province. Anhui cuisine is one of the eight Chinese cuisines. The ingredients are mostly from the wild, and the flavor is light. Anhui cuisine attaches importance to dietetic invigoration with natural ingredients. The representative dishes and Anhui cuisine desserts include Stinky Mandarin Fish, Fried Hairy Tofu, Steamed Partridge, Stewed Bamboo Shoots of Wenzheng Mountain, Huangshan Stewed Pigeon, Li Hongzhang Chop Suey, etc.'
-    });
-});
+
+function displayVideo(element) {
+  console.log(element.textContent);
+  const keyword = element.textContent + ' ' + cuisineType;
+  searchVideos(keyword, function(videoID) {
+      if (videoID) {
+          document.getElementById('video').innerHTML = 
+              `<iframe src="https://www.youtube.com/embed/${videoID}" frameborder="0" allowfullscreen></iframe>`;
+      } else {
+          document.getElementById('video').innerHTML = "<p>Video not found.</p>";
+      }
+  });
+}
+
+
+updatePage(cuisineType);

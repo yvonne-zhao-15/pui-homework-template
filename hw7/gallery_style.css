@@ -200,6 +200,10 @@ footer p{
     font-size: clamp(1.1rem, 1.9vw, 1.3rem);
 }
 
+.bullets{
+    font-weight: bold;
+}
+
 #description{
     flex: 0 0 60%;
     padding: 3vh 2vw;
