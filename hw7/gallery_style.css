@@ -112,8 +112,7 @@ hr{
     font-size: clamp(1.1rem, 2.3vw, 1.5rem);
     margin: 1vh 0px;
     color: black;
-    text-decoration: underline;
-
+    font-weight: bold;
 }
 
 .flavor{
