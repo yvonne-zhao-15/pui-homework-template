@@ -36,10 +36,18 @@ body{
 
 #title{
     font-size: 5vw;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .subtitle{
     font-size: 3vw;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 hr{
