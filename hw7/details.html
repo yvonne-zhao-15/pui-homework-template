@@ -5,13 +5,10 @@
     <title>8 Cuisines</title>
     <link rel="stylesheet" type="text/css" href="gallery_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="cuisinesData.js" defer></script>
+    
     <script src="detail.js" defer></script>
 
-    <!-- 
-    <script src="rollsData.js" defer></script>
-    <script src="price.js" defer></script>
-    <script src="updateBadge.js" defer></script>
-    -->
 
 </head>
 
@@ -25,34 +22,26 @@
       <!--Titles-->
       <div class="smaller-container"> <!--make this a flexbox-->
         <div id="title">Chinese Cuisines</div>
-        <div class="subtitle" lang="zh"> Anhui Cuisine 徽菜 </div>
+        <div class="subtitle" id ="heading" lang="zh"> Anhui Cuisine 徽菜 </div>
       </div>
     <hr>
     </div>
 
     <div id="main-content">
       <div class="facts-box">
-        <div class="facts-box-heading">Facts about Anhui Cuisine </div>
+        <div id="facts-box-heading">Facts about </div>
         <ul>
-          <li>
-            Chinese Name: 徽菜 huī cài
+          <li id="origin">
+            Origin: China's Anhui Province
           </li>
-          <li>
-            English Names: Anhui cuisine, Hui cuisine, Huizhou cuisine
-          </li>
-          <li>
-            Popular in: China's Anhui Province
-          </li>
-          <li>
+          <li id="flavors">
             Flavors: salty and fresh, light, the original flavor of wild ingredients
           </li>
           <li>
-            Famous Anhui Dishes: 
+            Famous Dishes: 
               <ul>
-                <li class="dishes">Stincky Mandarin Fish</li>
-                <li class="dishes">
-                  Fried Hairy Tofu
-                </li>
+                <li class="dishes" id="dishes1">Stincky Mandarin Fish</li>
+                <li class="dishes" id="dishes2"> Fried Hairy Tofu </li>
               </ul>
           </li>
         </ul>

@@ -1,3 +1,41 @@
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+const cuisineType = params.get('cuisine');
+
+class CuisineClass {
+  constructor(cuisineType){
+      this.type = cuisineType;
+  }
+};
+
+// update heading and description based on url
+function updatePage(cuisineType){
+  //heading
+  const heading = document.getElementById('heading');
+  heading.innerText = cuisines[cuisineType].name;
+  // text description
+  const description = document.getElementById('description');
+  description.innerText = cuisines[cuisineType].description;
+  // facts box
+  // heading
+  const boxHeading = document.getElementById('facts-box-heading');
+  boxHeading.innerText = boxHeading.innerText + ' ' + cuisineType;
+  // origin
+  const origin = document.getElementById('origin');
+  origin.innerText = cuisines[cuisineType].origin;
+  // flavors
+  const flavors = document.getElementById('flavors');
+  flavors.innerText = cuisines[cuisineType].flavors;
+  // famous dishes
+  const dish1 = document.getElementById('dishes1');
+  dish1.innerText = cuisines[cuisineType].dishes[0];
+  const dish2 = document.getElementById('dishes2');
+  dish2.innerText = cuisines[cuisineType].dishes[1]; 
+
+}
+
+updatePage(cuisineType);
+
 
 const dish = document.querySelectorAll('.dishes');
 
