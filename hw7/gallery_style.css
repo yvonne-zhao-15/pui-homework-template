@@ -201,6 +201,9 @@ footer p{
 #facts-box-heading{
     font-size: clamp(1.2rem, 2vw, 1.4rem);
     font-weight: bold;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .facts-box li{

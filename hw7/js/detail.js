@@ -1,16 +1,11 @@
+// get cuisineType from url
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
 const cuisineType = params.get('cuisine');
 
-class CuisineClass {
-  constructor(cuisineType){
-      this.type = cuisineType;
-  }
-};
-
 // update heading and description based on url
 function updatePage(cuisineType){
-  //heading
+  //header subtitle
   const heading = document.getElementById('heading');
   heading.innerText = cuisines[cuisineType].name;
   // text description
@@ -33,7 +28,7 @@ function updatePage(cuisineType){
   dish2.innerText = cuisines[cuisineType].dishes[1]; 
 }
 
-// Load YouTube API, code from ChatGPT
+// Load YouTube API, code edited from ChatGPT
 function start() {
   gapi.client.init({
       'apiKey': 'AIzaSyCACYHeXnER3m10ALSdTm848Ob8xWvIwpI'
@@ -66,8 +61,9 @@ function searchVideos(keyword, callback, maxResults = 1) {
       }
   });
 }
+// end reference
 
-
+// when a signature dish is clicked, display the corresponding video of the dish 
 function displayVideo(element) {
   console.log(element.textContent);
   const keyword = element.textContent + ' ' + cuisineType;
@@ -81,5 +77,5 @@ function displayVideo(element) {
   });
 }
 
-
+// render the page based on the cuisineType from url
 updatePage(cuisineType);

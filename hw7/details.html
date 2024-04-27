@@ -5,31 +5,30 @@
     <title>8 Cuisines</title>
     <link rel="stylesheet" type="text/css" href="gallery_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="cuisinesData.js" defer></script>
-    
-    <script src="detail.js" defer></script>
+    <script src="js/cuisinesData.js" defer></script>
+    <script src="js/detail.js" defer></script>
     <script src="https://apis.google.com/js/api.js"></script>
-
 </head>
 
 
 <body>
     <!--Header-->
     <header class="header-container">
+      <!--Icon-->
       <a href="index.html">
         <img src="./images/icon.png" alt="This is an icon of a bowl of rice" class="logo"> 
       </a>
       <!--Titles-->
-      <div class="smaller-container"> <!--make this a flexbox-->
+      <div class="smaller-container">
         <h1 id="title">Chinese Cuisines</h1>
-        <h2 class="subtitle" id ="heading" lang="zh">  </h2>
+        <h2 class="subtitle" id ="heading" lang="zh">Anhui Cuisine 徽菜</h2>
       </div>
     <hr>
     </header>
 
     <main id="main-content">
       <section class="facts-box">
-        <div id="facts-box-heading">Facts about </div>
+        <h3 id="facts-box-heading">Facts about </h3>
         <ul>
           <li><span class="bullets">Origin: </span><span id="origin"></span></li>
           <li><span class="bullets">Flavors: </span><span id="flavors"></span></li>
@@ -40,7 +39,6 @@
               </ul>
           </li>
         </ul>
-
       </section>
 
       <section id="description">
@@ -59,10 +57,10 @@
         For more information, please visit 
           <a href="https://openai.com/dall-e-3" target="_blank" rel="noopener noreferrer">OpenAI's DALL·E 3</a>.
       </p>
-      <p>Content Source: The textual content presented on this website has been sourced from the Travel China Guide. 
-        To read more, refer to their page on 
-          <a href="https://www.travelchinaguide.com/intro/cuisine_drink/cuisine/eight_cuisines.htm" target="_blank" rel="noopener noreferrer">Chinese Cuisines</a>.
-      </p>
+      <p>Text Information: The content on this website was compiled using information from <a href="https://www.travelchinaguide.com/intro/cuisine_drink/cuisine/eight_cuisines.htm" target="_blank" rel="noopener noreferrer">TravelChinaGuide</a> 
+        and insights provided by ChatGPT, OpenAI's language model. For additional details on the Chinese cuisines featured, 
+        visit <a href="https://www.travelchinaguide.com/intro/cuisine_drink/cuisine/eight_cuisines.htm" target="_blank" rel="noopener noreferrer">TravelChinaGuide's Chinese Cuisine</a> page.</p>
+
     </footer>
 
 </body>
